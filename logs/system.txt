@@ -1,0 +1,3 @@
+2025-03-12 14:46:14	[INFO]	hello system
+2025-03-12 14:46:14 - hello system
+

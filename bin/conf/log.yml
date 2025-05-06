@@ -1,0 +1,16 @@
+logs:
+    - name: root
+      level: info
+      formatter: "%d%T%m"
+      appenders:
+          - type: FileLogAppender
+            file: /home/yunlongqin/sylar_test/logs/root.txt
+          - type: StdoutLogAppender
+    - name: system
+      level: info
+      formatter: "%d%T[%p]%T%m"
+      appenders:
+          - type: FileLogAppender
+            file: /home/yunlongqin/sylar_test/logs/system.txt
+          - type: StdoutLogAppender
+          

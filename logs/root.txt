@@ -1,0 +1,19 @@
+2025-03-12 14:46:14	name=class.vec_map description=system person typename=std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Person, std::allocator<Person> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Person, std::allocator<Person> > > > > value={}
+2025-03-12 14:46:14	name=class.map description=system person typename=std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Person, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Person> > > value={}
+2025-03-12 14:46:14	name=class.person description=system person typename=Person value=name: ""
+age: 0
+sex: false
+2025-03-12 14:46:14	name=logs description=logs config typename=std::set<sylar::LogDefine, std::less<sylar::LogDefine>, std::allocator<sylar::LogDefine> > value=- name: root
+  level: INFO
+  formatter: "%d%T%m"
+  appenders:
+    - type: FileLogAppender
+      file: /home/yunlongqin/sylar_test/logs/root.txt
+    - type: StdoutLogAppender
+- name: system
+  level: INFO
+  formatter: "%d%T[%p]%T%m"
+  appenders:
+    - type: FileLogAppender
+      file: /home/yunlongqin/sylar_test/logs/system.txt
+    - type: StdoutLogAppender

@@ -1,0 +1,57 @@
+sylar::Logger::ptr logger(std::make_shared<sylar::Logger>());
+	1  Logger::Logger(const std::string& name)  //Logger构造函数
+	2  LogFormatter::LogFormatter(const std::string& pattern)  //构造一个Logger时要确定格式LogFormatter
+		2.1  LogFormatter::init()  //初始化格式
+			m_items: vector类型，存储各种格式（%d %n等）的实现
+	3  DateTimeFormatItem::DateTimeFormatItem()  //%d格式的构造函数
+	   ...（各种其他格式的实现(类)）
+
+logger->addAppender(sylar::LogAppender::ptr(std::make_shared<sylar::StdoutLogAppender>()));
+	1  LogAppender->StdoutAppender构造函数（默认构造）
+	2  Logger::addAppender(LogAppender::ptr appender)  //输入到控制台的appender
+
+sylar::FileLogAppender::ptr file_appender(std::make_shared<sylar::FileLogAppender>("./log.txt"));
+sylar::LogFormatter::ptr fmt(new sylar::LogFormatter("%d%T%p%T%m%n"));
+file_appender->setFormatter(fmt);
+	1  LogAppender构造函数（默认构造）->FileLogAppender::FileLogAppender(const std::string& filename)  //文件类输出目标
+	2  LogFormatter::LogFormatter(const std::string& pattern)  //构造一个格式LogFormatter——fmt
+
+logger->addAppender(file_appender);
+	1  Logger::addAppender(LogAppender::ptr appender)  //输入到文件的appender
+
+SYLAR_LOG_INFO(logger) << "test macro";
+<展开>SYLAR_LOG_LEVEL(logger, sylar::LogLevel::INFO)
+	1  LogEvent::LogEvent(...)  //创建日志事件
+		1.1  sylar::GetThreadId()  //获取线程id
+		1.2  sylar::GetFiberId()   //获取协程id
+	2  LogEventWrap::LogEventWrap(LogEvent::ptr e)  //使用日志事件包装器包装日志事件
+		1.1  LogEventWrap::getSS()/LogEvent::getSS()
+	3  LogEventWrap::~LogEventWrap()  //析构日志事件包装器
+		1.1  LogEvent::getLogger()  //返回日志器m_logger
+		1.2  Logger::log(LogLevel::Level level, LogEvent::ptr event)
+			1.2.1  StdoutLogAppender::log(...)
+				 LogFormatter::format(...)  //执行各种FormatItem的格式化并返回std::stringstream类型(控制台)
+			1.2.2  FileLogAppender::log(...)
+				 LogFormatter::format(...)  //执行各种FormatItem的格式化并返回std::ostream类型(输出到文件)
+
+SYLAR_LOG_FMT_ERROR(logger, "test macro fmt error %s", "aa");
+<展开>SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::ERROR, fmt, __VA_ARGS__)
+	1  LogEvent::LogEvent(...)  //创建日志事件
+		1.1  sylar::GetThreadId()  //获取线程id
+		1.2  sylar::GetFiberId()   //获取协程id
+	2  LogEventWrap::LogEventWrap(LogEvent::ptr e)  //使用日志事件包装器包装日志事件
+		1.1  LogEventWrap::getEvent()
+			1.1.1  LogEvent::format()  //解析<"test macro fmt error %s", "aa">
+		1.2  LogEventWrap::~LogEventWrap()   //同上
+		
+auto l = sylar::LoggerMgr::GetInstance()->getLogger("xx");  //单例模式
+	1  static T* GetInstance()
+		1.1  LoggerManager::LoggerManager()  //构造日志管理实例
+		1.2  LoggerManager::getLogger()      //创建日志并存入日志容器中
+
+
+			
+			
+		
+	
+	
