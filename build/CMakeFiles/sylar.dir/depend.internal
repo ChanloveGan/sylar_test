@@ -18,6 +18,7 @@ CMakeFiles/sylar.dir/sylar/fiber.cc.o
  /home/yunlongqin/WorkSpace/sylar_test/sylar/macro.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/noncopyable.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/scheduler.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/singleton.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/thread.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/util.h
@@ -34,6 +35,17 @@ CMakeFiles/sylar.dir/sylar/mutex.cc.o
  /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.cc
  /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/noncopyable.h
+CMakeFiles/sylar.dir/sylar/scheduler.cc.o
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/fiber.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/log.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/macro.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/noncopyable.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/scheduler.cc
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/scheduler.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/singleton.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/thread.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/util.h
 CMakeFiles/sylar.dir/sylar/thread.cc.o
  /home/yunlongqin/WorkSpace/sylar_test/sylar/log.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.h

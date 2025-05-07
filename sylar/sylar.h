@@ -27,7 +27,7 @@
 #include "mutex.h"
 #include "noncopyable.h"
 // #include "protocol.h"
-// #include "scheduler.h"
+#include "scheduler.h"
 #include "singleton.h"
 // #include "socket.h"
 // #include "stream.h"

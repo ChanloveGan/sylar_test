@@ -16,6 +16,8 @@ CXX_INCLUDES =
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/mutex.cc.o_DEFINES = __FILE__="sylar/mutex.cc"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/scheduler.cc.o_DEFINES = __FILE__="sylar/scheduler.cc"
+
 # Custom defines: CMakeFiles/sylar.dir/sylar/util.cc.o_DEFINES = __FILE__="sylar/util.cc"
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/thread.cc.o_DEFINES = __FILE__="sylar/thread.cc"

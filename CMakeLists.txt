@@ -11,6 +11,7 @@ set(LIB_SRC
     sylar/fiber.cc
     sylar/log.cc
     sylar/mutex.cc
+    sylar/scheduler.cc
     sylar/util.cc
     sylar/thread.cc
     )
@@ -54,6 +55,11 @@ add_executable(test_fiber tests/test_fiber.cc)
 add_dependencies(test_fiber sylar)
 force_redefine_file_macro_for_sources(test_fiber)  # __FILE__
 target_link_libraries(test_fiber PRIVATE sylar Threads::Threads)
+
+add_executable(test_scheduler tests/test_scheduler.cc)
+add_dependencies(test_scheduler sylar)
+force_redefine_file_macro_for_sources(test_scheduler)  # __FILE__
+target_link_libraries(test_scheduler PRIVATE sylar Threads::Threads)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

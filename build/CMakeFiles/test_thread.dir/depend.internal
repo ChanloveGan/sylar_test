@@ -8,6 +8,7 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /home/yunlongqin/WorkSpace/sylar_test/sylar/macro.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/mutex.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/noncopyable.h
+ /home/yunlongqin/WorkSpace/sylar_test/sylar/scheduler.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/singleton.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/sylar.h
  /home/yunlongqin/WorkSpace/sylar_test/sylar/thread.h
